@@ -175,7 +175,13 @@ public:
 		assert(s != NULL);
 
 		dlplan::core::State dlplan_target_state = m_sketch_problem->from_lapkt_state(s, s->index());
-		// s->print( std::cout );
+		s->print( std::cout );
+		for(const auto boolean : m_sketch->get_boolean_features()){
+			std::cout << boolean->compute_repr() << ": " << boolean->evaluate(dlplan_target_state) << std::endl;
+		}
+		for(const auto numerical : m_sketch->get_numerical_features()){
+			std::cout << numerical->compute_repr() << ": " << numerical->evaluate(dlplan_target_state) << std::endl;
+		}
 		const auto evaluation_result = m_sketch->evaluate_effects_lazy(m_dlplan_initial_state, dlplan_target_state, m_rules, m_denotation_caches);
 		if (evaluation_result) {
 			m_key_applied_rule = evaluation_result->compute_repr();
