@@ -1,0 +1,42 @@
+(define (problem transport-generated)
+	(:domain transport)
+(:objects
+	p_0_0 p_0_1 p_0_2 p_1_0 p_1_1 p_1_2 p_2_0 p_2_1 p_2_2 - place
+	b0 - box
+	t0 - truck
+)
+
+(:init
+	(connected p_0_0 p_1_0)
+	(connected p_0_0 p_0_1)
+	(connected p_0_1 p_1_1)
+	(connected p_0_1 p_0_0)
+	(connected p_0_1 p_0_2)
+	(connected p_0_2 p_1_2)
+	(connected p_0_2 p_0_1)
+	(connected p_1_0 p_0_0)
+	(connected p_1_0 p_2_0)
+	(connected p_1_0 p_1_1)
+	(connected p_1_1 p_0_1)
+	(connected p_1_1 p_2_1)
+	(connected p_1_1 p_1_0)
+	(connected p_1_1 p_1_2)
+	(connected p_1_2 p_0_2)
+	(connected p_1_2 p_2_2)
+	(connected p_1_2 p_1_1)
+	(connected p_2_0 p_1_0)
+	(connected p_2_0 p_2_1)
+	(connected p_2_1 p_1_1)
+	(connected p_2_1 p_2_0)
+	(connected p_2_1 p_2_2)
+	(connected p_2_2 p_1_2)
+	(connected p_2_2 p_2_1)
+	(at b0 p_0_0)
+	(at t0 p_0_0)
+	(empty t0)
+)
+
+(:goal
+	(at b0 p_2_2)
+)
+)
