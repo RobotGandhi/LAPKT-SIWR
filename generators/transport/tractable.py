@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 import sys
+import random
 
-if len(sys.argv) != 4:
+if len(sys.argv) != 5:
     raise SystemExit(
-        "Usage: <grid-size> <boxes> <trucks>"
+        "Usage: <grid-size> <boxes> <trucks> <seed>"
     )
 
 grid_size = int(sys.argv[1])
 boxes = int(sys.argv[2])
 trucks = int(sys.argv[3])
+seed = int(sys.argv[4])
 
+random.seed(seed)
 sys.stdout = open('output.txt', 'w')
 
 print("(define (problem transport-generated)")
@@ -46,15 +49,17 @@ for x in range(grid_size):
 
         
 for i in range(boxes):
-    print(f"\t(at b{i} p_0_0)")
+    print(f"\t(at b{i} p_{random.randint(0, grid_size - 1)}_{random.randint(0, grid_size - 1)})")
 for i in range(trucks):
-    print(f"\t(at t{i} p_0_0)")
+    print(f"\t(at t{i} p_{random.randint(0, grid_size - 1)}_{random.randint(0, grid_size - 1)})")
     print(f"\t(empty t{i})")
 print(")\n")
 
 print("(:goal")
+print("\t(and")
 for i in range(boxes):
-    print(f"\t(at b{i} p_{grid_size - 1}_{grid_size - 1})")
+    print(f"\t\t(at b{i} p_{grid_size - 1}_{grid_size - 1})")
+print("\t)")
 print(")")
 
 print(")")
