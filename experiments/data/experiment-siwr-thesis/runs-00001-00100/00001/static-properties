@@ -1,0 +1,11 @@
+{
+  "algorithm": "siwr_0",
+  "domain": "transport",
+  "id": [
+    "siwr_0",
+    "transport",
+    "basic.pddl"
+  ],
+  "problem": "basic.pddl",
+  "run_dir": "runs-00001-00100/00001"
+}
