@@ -8,6 +8,7 @@ from . import pddl
 from . import fact_groups
 from . import timers
 import sys
+import random
 
 
 from . import normalize

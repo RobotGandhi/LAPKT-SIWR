@@ -7,8 +7,8 @@ custom_cplus = ARGUMENTS.get( 'CCX', 'g++4.7' )
 
 common_env = Environment()
 
-include_paths = ['/usr/local/include','include']
-lib_paths = [  ]
+include_paths = ['/usr/local/include','include','libs/dlplan/installs/release/include']
+lib_paths = ['libs/dlplan/installs/lib']
 libs = ['judy']
 
 common_env.Append( CPPPATH = [ os.path.abspath(p) for p in include_paths ] )
