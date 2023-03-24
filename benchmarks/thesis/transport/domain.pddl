@@ -1,6 +1,7 @@
 (define (domain transport)
 (:requirements :typing)
-(:types	place - object
+(:types		fuel - object
+		place - object
 		movable - object
 		box - movable
 		truck - movable
@@ -10,6 +11,8 @@
 		(in ?x1 - box ?x2 - truck)
 		(connected ?x1 - place ?x2 - place)
 		(empty ?x1 - truck)
+		(fuel-level ?x1 - truck ?x2 - fuel)
+		(fuel-predecessor ?x1 - fuel ?x2 - fuel)
 )
 
 (:action pick-up-box
@@ -33,11 +36,13 @@
 
 
 (:action move
-:parameters (?t - truck ?from - place ?to - place)
-:precondition (and (connected ?from ?to) (at ?t ?from))
+:parameters (?t - truck ?from - place ?to - place ?fuel-pre - fuel ?fuel-post - fuel)
+:precondition (and (connected ?from ?to) (at ?t ?from) (fuel-level ?t ?fuel-pre) (fuel-predecessor ?fuel-post ?fuel-pre))
 :effect (and
 (not (at ?t ?from))
-(at ?t ?to))
+(not (fuel-level ?t ?fuel-pre))
+(at ?t ?to)
+(fuel-level ?t ?fuel-post))
 )
 
 )

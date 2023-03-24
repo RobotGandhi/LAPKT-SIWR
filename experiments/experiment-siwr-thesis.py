@@ -59,7 +59,7 @@ print(BENCHMARKS_DIR)
 if project.REMOTE:
     SUITE = ["transport"]
     ENV = project.TetralithEnvironment(
-        email="dominik.drexler@liu.se",
+        email="vikca761@student.liu.se",
         extra_options="#SBATCH --account=snic2022-5-341",
         memory_per_cpu="8G")
 else:
@@ -76,7 +76,7 @@ exp.add_parse_again_step()
 exp.add_fetcher(name="fetch")
 exp.add_parser("parser-singularity-iw.py")
 
-IMAGES_DIR = DIR.parent / "planner"
+IMAGES_DIR = DIR.parent / "planners"
 print(IMAGES_DIR)
 
 def get_image(name):
