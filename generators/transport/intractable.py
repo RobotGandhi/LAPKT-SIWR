@@ -21,7 +21,7 @@ for width in range(grid_size_min, grid_size_max + 1, grid_size_step):
     for height in range(grid_size_min, grid_size_max + 1, grid_size_step):
         boxes = math.floor((width * height) * boxes_ratio)
         fuel_upper_bound = 2 * (width + height) * boxes
-        fuel = math.ceil(fuel_upper_bound * 0.2)
+        fuel = math.ceil(fuel_upper_bound)
         sys.stdout = open(f'outputs/transport_{width}_{height}_{boxes}_{trucks}.pddl', 'w')
 
         print("(define (problem transport-generated)")
@@ -78,7 +78,7 @@ for width in range(grid_size_min, grid_size_max + 1, grid_size_step):
         print("(:goal")
         print("\t(and")
         for i in range(boxes):
-            print(f"\t\t(at b{i} p_{width - 1}_{height - 1})")
+            print(f"\t\t(at b{i} p_{random.randint(0, width - 1)}_{random.randint(0, height - 1)})")
         print("\t)")
         print(")")
 

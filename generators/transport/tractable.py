@@ -37,6 +37,7 @@ for i in range(trucks):
     temp += f"t{i} "
 
 print(f"\t{temp}- truck")
+print("\tf1 - fuel")
 print(")\n")
 
 print("(:init")
@@ -53,12 +54,14 @@ for i in range(boxes):
 for i in range(trucks):
     print(f"\t(at t{i} p_{random.randint(0, grid_size - 1)}_{random.randint(0, grid_size - 1)})")
     print(f"\t(empty t{i})")
+    print(f"\t(fuel-level t{i} f1)")
+print(f"(fuel-predecessor f1 f1)")
 print(")\n")
 
 print("(:goal")
 print("\t(and")
 for i in range(boxes):
-    print(f"\t\t(at b{i} p_{grid_size - 1}_{grid_size - 1})")
+    print(f"\t\t(at b{i} p_{random.randint(0, grid_size - 1)}_{random.randint(0, grid_size - 1)})")
 print("\t)")
 print(")")
 
