@@ -18,7 +18,7 @@ redirects = {"stdout": run_log, "stderr": run_err}
 # Make sure we're in the run directory.
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-Call(['../../run-singularity-siwr.sh', '../../siwr.img', 'domain.pddl', 'problem.pddl', 'transport_0.txt', 'plan.ipc'], hard_stderr_limit=10240, hard_stdout_limit=10240, memory_limit=8000, name='run-planner', soft_stderr_limit=64, soft_stdout_limit=1024, time_limit=1800, **redirects).wait()
+Call(['../../run-singularity-siwr.sh', '../../siwr.img', 'domain.pddl', 'problem.pddl', 'nurikabe_0.txt', 'plan.ipc'], hard_stderr_limit=10240, hard_stdout_limit=10240, memory_limit=8000, name='run-planner', soft_stderr_limit=64, soft_stdout_limit=1024, time_limit=1800, **redirects).wait()
 
 Call(['/home/robotgandhi/Desktop/thesis_work/LAPKT-SIWR/.venv/bin/python3', '../../parser-singularity-iw.py'], hard_stderr_limit=10240, hard_stdout_limit=10240, memory_limit=None, name='parser_singularity_iw', soft_stderr_limit=64, soft_stdout_limit=1024, time_limit=None, **redirects).wait()
 

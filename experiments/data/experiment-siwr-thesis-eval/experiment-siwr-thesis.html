@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", show_main_tables);
 <header>
 <hgroup>
 <h1>experiment-siwr-thesis</h1>
-<h3>2023-03-06</h3>
+<h3>2023-06-05</h3>
 </hgroup>
 </header>
 <article>
@@ -114,69 +114,27 @@ document.addEventListener("DOMContentLoaded", show_main_tables);
 </li>
 <li><strong><a href="#summary" onclick="show_table(document.getElementById('summary'));">Summary</a></strong>
 </li>
-<li><strong><a href="#cost" onclick="show_table(document.getElementById('cost'));">cost</a></strong>
-  <ul>
-  <li><a href="#cost-transport" onclick="show_table(document.getElementById('cost-transport'));">transport</a>
-  </li>
-  </ul>
-</li>
 <li><strong><a href="#coverage" onclick="show_table(document.getElementById('coverage'));">coverage</a></strong>
   <ul>
-  <li><a href="#coverage-transport" onclick="show_table(document.getElementById('coverage-transport'));">transport</a>
+  <li><a href="#coverage-nurikabe" onclick="show_table(document.getElementById('coverage-nurikabe'));">nurikabe</a>
   </li>
   </ul>
 </li>
 <li><strong><a href="#error" onclick="show_table(document.getElementById('error'));">error</a></strong>
   <ul>
-  <li><a href="#error-error-none" onclick="show_table(document.getElementById('error-error-none'));">error-none</a> <a href="#error-transport" onclick="show_table(document.getElementById('error-transport'));">transport</a>
-  </li>
-  </ul>
-</li>
-<li><strong><a href="#expanded" onclick="show_table(document.getElementById('expanded'));">expanded</a></strong>
-  <ul>
-  <li><a href="#expanded-transport" onclick="show_table(document.getElementById('expanded-transport'));">transport</a>
-  </li>
-  </ul>
-</li>
-<li><strong><a href="#generated" onclick="show_table(document.getElementById('generated'));">generated</a></strong>
-  <ul>
-  <li><a href="#generated-transport" onclick="show_table(document.getElementById('generated-transport'));">transport</a>
+  <li><a href="#error-error-none" onclick="show_table(document.getElementById('error-error-none'));">error-none</a> <a href="#error-nurikabe" onclick="show_table(document.getElementById('error-nurikabe'));">nurikabe</a>
   </li>
   </ul>
 </li>
 <li><strong><a href="#not_i_reachable" onclick="show_table(document.getElementById('not_i_reachable'));">not_i_reachable</a></strong>
   <ul>
-  <li><a href="#not_i_reachable-transport" onclick="show_table(document.getElementById('not_i_reachable-transport'));">transport</a>
-  </li>
-  </ul>
-</li>
-<li><strong><a href="#pruned" onclick="show_table(document.getElementById('pruned'));">pruned</a></strong>
-  <ul>
-  <li><a href="#pruned-transport" onclick="show_table(document.getElementById('pruned-transport'));">transport</a>
+  <li><a href="#not_i_reachable-nurikabe" onclick="show_table(document.getElementById('not_i_reachable-nurikabe'));">nurikabe</a>
   </li>
   </ul>
 </li>
 <li><strong><a href="#run_dir" onclick="show_table(document.getElementById('run_dir'));">run_dir</a></strong>
   <ul>
-  <li><a href="#run_dir-transport" onclick="show_table(document.getElementById('run_dir-transport'));">transport</a>
-  </li>
-  </ul>
-</li>
-<li><strong><a href="#total_time" onclick="show_table(document.getElementById('total_time'));">total_time</a></strong>
-  <ul>
-  <li><a href="#total_time-transport" onclick="show_table(document.getElementById('total_time-transport'));">transport</a>
-  </li>
-  </ul>
-</li>
-<li><strong><a href="#width_average" onclick="show_table(document.getElementById('width_average'));">width_average</a></strong>
-  <ul>
-  <li><a href="#width_average-transport" onclick="show_table(document.getElementById('width_average-transport'));">transport</a>
-  </li>
-  </ul>
-</li>
-<li><strong><a href="#width_maximum" onclick="show_table(document.getElementById('width_maximum'));">width_maximum</a></strong>
-  <ul>
-  <li><a href="#width_maximum-transport" onclick="show_table(document.getElementById('width_maximum-transport'));">transport</a>
+  <li><a href="#run_dir-nurikabe" onclick="show_table(document.getElementById('run_dir-nurikabe'));">nurikabe</a>
   </li>
   </ul>
 </li>
@@ -203,97 +161,19 @@ Used nodes: {robotgandhi-OMEN-Laptop-15-en0xxx}
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td><a href="#cost" onclick="show_table(document.getElementById('cost'));">cost - Sum</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">12</span></td>
-</tr>
-<tr>
 <td><a href="#coverage" onclick="show_table(document.getElementById('coverage'));">coverage - Sum</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">3</span></td>
+<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 <tr>
 <td><a href="#error-error-none" onclick="show_table(document.getElementById('error-error-none'));">error-none - Sum</a></td>
-<td class="right">3</td>
-</tr>
-<tr>
-<td><a href="#expanded" onclick="show_table(document.getElementById('expanded'));">expanded - Sum</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">12</span></td>
-</tr>
-<tr>
-<td><a href="#generated" onclick="show_table(document.getElementById('generated'));">generated - Geometric mean</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">13.39</span></td>
+<td class="right">1</td>
 </tr>
 <tr>
 <td><a href="#not_i_reachable" onclick="show_table(document.getElementById('not_i_reachable'));">not_i_reachable - Sum</a></td>
 <td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
-<tr>
-<td><a href="#pruned" onclick="show_table(document.getElementById('pruned'));">pruned - Sum</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td><a href="#total_time" onclick="show_table(document.getElementById('total_time'));">total_time - Sum</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">1.11</span></td>
-</tr>
-<tr>
-<td><a href="#width_average" onclick="show_table(document.getElementById('width_average'));">width_average - Arithmetic mean</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">0.00</span></td>
-</tr>
-<tr>
-<td><a href="#width_maximum" onclick="show_table(document.getElementById('width_maximum'));">width_maximum - Sum</a></td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
 </table>
 
-</section>
-<section id="cost">
-<h2>cost</h2>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>cost</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td><a href="#cost-transport" onclick="show_table(document.getElementById('cost-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">12</span></td>
-</tr>
-<tr>
-<td><strong>Sum (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">12</span></td>
-</tr>
-</table>
-
-<p>
-Only tasks where all algorithms have a value for "cost" are considered. Each table entry gives the sum of "cost" for that domain. The bottom row reports the sum across all domains.
-</p>
-
-<section id="cost-transport">
-<h3>transport</h3>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>cost</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">3</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">4</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">5</span></td>
-</tr>
-</table>
-
-</section>
 </section>
 <section id="coverage">
 <h2>coverage</h2>
@@ -306,12 +186,12 @@ Only tasks where all algorithms have a value for "cost" are considered. Each tab
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td><a href="#coverage-transport" onclick="show_table(document.getElementById('coverage-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">3</span></td>
+<td><a href="#coverage-nurikabe" onclick="show_table(document.getElementById('coverage-nurikabe'));">nurikabe</a> (1)</td>
+<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 <tr>
-<td><strong>Sum (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">3</span></td>
+<td><strong>Sum (1)</strong></td>
+<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 </table>
 
@@ -319,8 +199,8 @@ Only tasks where all algorithms have a value for "cost" are considered. Each tab
 The bottom row reports the sum across all domains.
 </p>
 
-<section id="coverage-transport">
-<h3>transport</h3>
+<section id="coverage-nurikabe">
+<h3>nurikabe</h3>
 
 <button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
 
@@ -330,16 +210,8 @@ The bottom row reports the sum across all domains.
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">1</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">1</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">1</span></td>
+<td>nurikabe_2_2_761.pddl</td>
+<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 </table>
 
@@ -359,18 +231,18 @@ The bottom row reports the sum across all domains.
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td><a href="#error-transport" onclick="show_table(document.getElementById('error-transport'));">transport</a></td>
-<td class="right">3</td>
+<td><a href="#error-nurikabe" onclick="show_table(document.getElementById('error-nurikabe'));">nurikabe</a></td>
+<td class="right">1</td>
 </tr>
 <tr>
 <td><strong>Sum</strong></td>
-<td class="right">3</td>
+<td class="right">1</td>
 </tr>
 </table>
 
 </section>
-<section id="error-transport">
-<h3>transport</h3>
+<section id="error-nurikabe">
+<h3>nurikabe</h3>
 
 <button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
 
@@ -380,116 +252,8 @@ The bottom row reports the sum across all domains.
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td>basic.pddl</td>
+<td>nurikabe_2_2_761.pddl</td>
 <td>none</td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td>none</td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td>none</td>
-</tr>
-</table>
-
-</section>
-</section>
-<section id="expanded">
-<h2>expanded</h2>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>expanded</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td><a href="#expanded-transport" onclick="show_table(document.getElementById('expanded-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">12</span></td>
-</tr>
-<tr>
-<td><strong>Sum (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">12</span></td>
-</tr>
-</table>
-
-<p>
-Only tasks where all algorithms have a value for "expanded" are considered. Each table entry gives the sum of "expanded" for that domain. The bottom row reports the sum across all domains.
-</p>
-
-<section id="expanded-transport">
-<h3>transport</h3>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>expanded</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">3</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">4</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">5</span></td>
-</tr>
-</table>
-
-</section>
-</section>
-<section id="generated">
-<h2>generated</h2>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>generated</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td><a href="#generated-transport" onclick="show_table(document.getElementById('generated-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">13.39</span></td>
-</tr>
-<tr>
-<td><strong>Geometric mean (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">13.39</span></td>
-</tr>
-</table>
-
-<p>
-Only tasks where all algorithms have a value for "generated" are considered. Each table entry gives the geometric mean of "generated" for that domain. The bottom row reports the geometric mean across all domains.
-</p>
-
-<section id="generated-transport">
-<h3>transport</h3>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>generated</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">10</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">15</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">16</span></td>
 </tr>
 </table>
 
@@ -506,11 +270,11 @@ Only tasks where all algorithms have a value for "generated" are considered. Eac
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td><a href="#not_i_reachable-transport" onclick="show_table(document.getElementById('not_i_reachable-transport'));">transport</a> (3)</td>
+<td><a href="#not_i_reachable-nurikabe" onclick="show_table(document.getElementById('not_i_reachable-nurikabe'));">nurikabe</a> (1)</td>
 <td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 <tr>
-<td><strong>Sum (3)</strong></td>
+<td><strong>Sum (1)</strong></td>
 <td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 </table>
@@ -519,8 +283,8 @@ Only tasks where all algorithms have a value for "generated" are considered. Eac
 The bottom row reports the sum across all domains.
 </p>
 
-<section id="not_i_reachable-transport">
-<h3>transport</h3>
+<section id="not_i_reachable-nurikabe">
+<h3>nurikabe</h3>
 
 <button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
 
@@ -530,65 +294,7 @@ The bottom row reports the sum across all domains.
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-</table>
-
-</section>
-</section>
-<section id="pruned">
-<h2>pruned</h2>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>pruned</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td><a href="#pruned-transport" onclick="show_table(document.getElementById('pruned-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td><strong>Sum (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-</table>
-
-<p>
-Only tasks where all algorithms have a value for "pruned" are considered. Each table entry gives the sum of "pruned" for that domain. The bottom row reports the sum across all domains.
-</p>
-
-<section id="pruned-transport">
-<h3>transport</h3>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>pruned</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
+<td>nurikabe_2_2_761.pddl</td>
 <td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 </table>
@@ -602,8 +308,8 @@ Only tasks where all algorithms have a value for "pruned" are considered. Each t
 Per-domain reports only support numeric attributes, but run_dir has type str.
 </p>
 
-<section id="run_dir-transport">
-<h3>transport</h3>
+<section id="run_dir-nurikabe">
+<h3>nurikabe</h3>
 
 <button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
 
@@ -613,166 +319,8 @@ Per-domain reports only support numeric attributes, but run_dir has type str.
 <th>siwr_<wbr>0</th>
 </tr>
 <tr>
-<td>basic.pddl</td>
+<td>nurikabe_2_2_761.pddl</td>
 <td>runs-00001-00100/00001</td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td>runs-00001-00100/00002</td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td>runs-00001-00100/00003</td>
-</tr>
-</table>
-
-</section>
-</section>
-<section id="total_time">
-<h2>total_time</h2>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>total_<wbr>time</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td><a href="#total_time-transport" onclick="show_table(document.getElementById('total_time-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">1.11</span></td>
-</tr>
-<tr>
-<td><strong>Sum (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">1.11</span></td>
-</tr>
-</table>
-
-<p>
-The bottom row reports the sum across all domains.
-</p>
-
-<section id="total_time-transport">
-<h3>transport</h3>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>total_<wbr>time</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0.35</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0.38</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0.38</span></td>
-</tr>
-</table>
-
-</section>
-</section>
-<section id="width_average">
-<h2>width_average</h2>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>width_<wbr>average</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td><a href="#width_average-transport" onclick="show_table(document.getElementById('width_average-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">0.00</span></td>
-</tr>
-<tr>
-<td><strong>Arithmetic mean (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">0.00</span></td>
-</tr>
-</table>
-
-<p>
-The bottom row reports the arithmetic mean across all domains.
-</p>
-
-<section id="width_average-transport">
-<h3>transport</h3>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>width_<wbr>average</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0.00</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0.00</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0.00</span></td>
-</tr>
-</table>
-
-</section>
-</section>
-<section id="width_maximum">
-<h2>width_maximum</h2>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>width_<wbr>maximum</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td><a href="#width_maximum-transport" onclick="show_table(document.getElementById('width_maximum-transport'));">transport</a> (3)</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td><strong>Sum (3)</strong></td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-</table>
-
-<p>
-The bottom row reports the sum across all domains.
-</p>
-
-<section id="width_maximum-transport">
-<h3>transport</h3>
-
-<button type="button" class="toggle-table" onclick="toggle_table(this)">Show table</button><p></p>
-
-<table class="tableborder" style="display:none">
-<tr>
-<th>width_<wbr>maximum</th>
-<th>siwr_<wbr>0</th>
-</tr>
-<tr>
-<td>basic.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td>circular_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
-</tr>
-<tr>
-<td>long_path.pddl</td>
-<td class="right"><span style="color:rgb(127,127,127)">0</span></td>
 </tr>
 </table>
 

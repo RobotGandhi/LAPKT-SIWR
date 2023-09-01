@@ -1,11 +1,11 @@
 {
   "algorithm": "siwr_0",
-  "domain": "transport",
+  "domain": "nurikabe",
   "id": [
     "siwr_0",
-    "transport",
-    "basic.pddl"
+    "nurikabe",
+    "nurikabe_2_2_761.pddl"
   ],
-  "problem": "basic.pddl",
+  "problem": "nurikabe_2_2_761.pddl",
   "run_dir": "runs-00001-00100/00001"
 }

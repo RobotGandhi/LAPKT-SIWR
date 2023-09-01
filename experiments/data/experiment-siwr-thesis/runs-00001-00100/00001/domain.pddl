@@ -1,43 +1,98 @@
-(define (domain transport)
+(define (domain nurikabe)
 (:requirements :typing)
-(:types	place - object
-		movable - object
-		box - movable
-		truck - movable
+(:types
+	cell - object
+	num - object
+	group - object
 )
-
-(:predicates	(at ?x1 - movable ?x2 - place)
-		(in ?x1 - box ?x2 - truck)
-		(connected ?x1 - place ?x2 - place)
-		(empty ?x1 - truck)
+(:constants
+    	n0 - num
 )
-
-(:action pick-up-box
-:parameters (?t - truck ?b - box ?x - place)
-:precondition (and (at ?b ?x) (at ?t ?x) (empty ?t))
-:effect (and
-(not (at ?b ?x))
-(not (empty ?t))
-(in ?b ?t))
+(:predicates	
+	(at ?x1 - cell)
+	(connected ?x1 - cell ?x2 - cell)
+	(painted ?x1 - cell ?g1 - group)
+	(group-source ?c - cell ?g - group)
+	(remaining-cells ?g - group ?n - num)
+	(group-painted ?g - group)
+	(moving)
+    	(painting ?g - group)
+    	(number-predecessor ?n1 - num ?n2 - num)
 )
-
-
-(:action drop-box
-:parameters (?t - truck ?b - box ?x - place)
-:precondition (and (at ?t ?x) (in ?b ?t))
-:effect (and
-(empty ?t)
-(not (in ?b ?t))
-(at ?b ?x))
-)
-
 
 (:action move
-:parameters (?t - truck ?from - place ?to - place)
-:precondition (and (connected ?from ?to) (at ?t ?from))
-:effect (and
-(not (at ?t ?from))
-(at ?t ?to))
+    :parameters (?from - cell ?to - cell)
+    :precondition
+    (and
+        (connected ?from ?to)
+        (moving)
+        (at ?from)
+    )
+    :effect
+    (and
+        (at ?to)
+        (not (at ?from))
+    )
+)
+
+(:action start-painting
+    :parameters (?c - cell ?g - group ?n1 - num ?n2 - num)
+    :precondition
+    (and
+        (number-predecessor ?n1 ?n2)
+        (group-source ?c ?g)
+        (moving)
+        (at ?c)
+        (remaining-cells ?g ?n2)
+    )
+    :effect
+    (and
+        (not (moving))
+        (painting ?g)
+        (painted ?c ?g)
+        (remaining-cells ?g ?n1)
+        (not (remaining-cells ?g ?n2))
+    )
+)
+
+(:action move-painting
+    :parameters (?from - cell ?to - cell ?g - group ?n1 - num ?n2 - num)
+    :precondition
+    (and
+        (number-predecessor ?n1 ?n2)
+        (connected ?from ?to)
+        (painting ?g)
+        (remaining-cells ?g ?n2)
+        (at ?from)
+    )
+    :effect
+    (and
+        (at ?to)
+        (not (at ?from))
+        (when
+            (not(painted ?to ?g))
+            (and
+        	(painted ?to ?g)
+		(remaining-cells ?g ?n1)
+		(not (remaining-cells ?g ?n2))
+	    )
+        )
+    )
+)
+
+(:action end-painting
+    :parameters (?g - group)
+    :precondition
+    (and
+        (painting ?g)
+        (remaining-cells ?g n0)
+    )
+    :effect
+    (and
+        (not (painting ?g))
+        (moving)
+        (group-painted ?g)
+    )
 )
 
 )

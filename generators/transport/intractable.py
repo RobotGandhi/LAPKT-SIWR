@@ -25,23 +25,26 @@ if exists(f"input_{boxes_ratio}_{seed}.txt"):
         elements = line.split()
         input_dict[elements[0]] = elements[1]
 
-random.seed(seed)
-for truck_fuel_ratio_difference in range(0, 11):
+for truck_fuel_ratio_difference in range(10, 21):
     truck_fuel_ratio_difference /= 20
+    random.seed(seed)
     for width in range(grid_size_min, grid_size_max + 1, grid_size_step):
         for height in range(grid_size_min, grid_size_max + 1, grid_size_step):
             boxes = math.floor((width * height) * boxes_ratio)
             fuel = 0
-            if not exists(f"outputs_minus_{truck_fuel_ratio_difference}"):
-                makedirs(f"outputs_minus_{truck_fuel_ratio_difference}")
-            if not exists(f"outputs_plus_{truck_fuel_ratio_difference}"):
-                makedirs(f"outputs_plus_{truck_fuel_ratio_difference}")
+            if not exists(f"transport_thesis_minus_{truck_fuel_ratio_difference}"):
+                makedirs(f"transport_thesis_minus_{truck_fuel_ratio_difference}")
+            if not exists(f"transport_thesis_plus_{truck_fuel_ratio_difference}"):
+                continue
+                makedirs(f"transport_thesis_plus_{truck_fuel_ratio_difference}")
             if f"{width}_{height}_{boxes}_{trucks}" in input_dict:
-                sys.stdout = open(f'outputs_plus_{truck_fuel_ratio_difference}/transport_{width}_{height}_{boxes}_{trucks}.pddl', 'w')
-                fuel = int(input_dict[f'{width}_{height}_{boxes}_{trucks}'])
+                continue
+                sys.stdout = open(f'transport_thesis_plus_{truck_fuel_ratio_difference}/transport_{width}_{height}_{boxes}_{trucks}.pddl', 'w')
+                fuel = math.ceil(int(input_dict[f'{width}_{height}_{boxes}_{trucks}']) * (1 + truck_fuel_ratio_difference))
             else:
-                sys.stdout = open(f'outputs_minus_{truck_fuel_ratio_difference}/transport_{width}_{height}_{boxes}_{trucks}.pddl', 'w')
-                fuel = 2 * (width + height - 2) * boxes
+                boxes = math.floor((width * height) * 2 * boxes_ratio)
+                sys.stdout = open(f'transport_thesis_minus_{truck_fuel_ratio_difference}/transport_{width}_{height}_{boxes}_{trucks}.pddl', 'w')
+                fuel = math.ceil(2 * (width + height - 2) * boxes * (1 - truck_fuel_ratio_difference))
 
             print("(define (problem transport-generated)")
             print("\t(:domain transport)")
@@ -87,16 +90,11 @@ for truck_fuel_ratio_difference in range(0, 11):
                 print(f"\t(at t{i} p_{random.randint(0, width - 1)}_{random.randint(0, height - 1)})")
                 print(f"\t(empty t{i})")
                 # print(f"\t(fuel-level t{i} f{math.ceil(total_fuel_needed * truck_fuel_ratio)})")
-                if f"{width}_{height}_{boxes}_{trucks}" in input_dict:
-                    print(f"\t(fuel-level t{i} f{math.ceil(fuel * (1 + truck_fuel_ratio_difference))})")
-                else:
-                    print(f"\t(fuel-level t{i} f{math.ceil(fuel * (1 - truck_fuel_ratio_difference))})")
+                print(f"\t(fuel-level t{i} f{fuel})")
 
             # for i in range(math.ceil(total_fuel_needed * truck_fuel_ratio)):
             for i in range(fuel):
                 print(f"\t(fuel-predecessor f{i} f{i + 1})")
-
-            print("\t(= (total-cost) 0)")
 
             print(")\n")
 
@@ -106,8 +104,6 @@ for truck_fuel_ratio_difference in range(0, 11):
                 print(f"\t\t(at b{i} p_{random.randint(0, width - 1)}_{random.randint(0, height - 1)})")
             print("\t)")
             print(")\n")
-
-            print("(:metric minimize (total-cost))")
 
 
             print(")")

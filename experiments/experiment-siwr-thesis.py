@@ -57,13 +57,13 @@ DIR = Path(__file__).resolve().parent
 BENCHMARKS_DIR = DIR.parent / "benchmarks" / "thesis"
 print(BENCHMARKS_DIR)
 if project.REMOTE:
-    SUITE = ["transport"]
+    SUITE = ["nurikabe"]
     ENV = project.TetralithEnvironment(
         email="vikca761@student.liu.se",
         extra_options="#SBATCH --account=snic2022-5-341",
         memory_per_cpu="8G")
 else:
-    SUITE = ["transport"]
+    SUITE = ["nurikabe"]
     ENV = project.LocalEnvironment(processes=4)
 
 SKETCHES_DIR = DIR.parent / "sketches" / "sketches_thesis2023"

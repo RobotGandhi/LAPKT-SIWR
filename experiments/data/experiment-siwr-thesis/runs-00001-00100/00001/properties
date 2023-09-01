@@ -1,15 +1,8 @@
 {
-  "cost": 3,
-  "coverage": 1,
+  "coverage": 0,
   "error": "none",
-  "expanded": 3,
-  "generated": 10,
   "node": "robotgandhi-OMEN-Laptop-15-en0xxx",
   "not_i_reachable": 0,
   "planner_exit_code": 0,
-  "planner_wall_clock_time": 0.37,
-  "pruned": 0,
-  "total_time": 0.35,
-  "width_average": 0.0,
-  "width_maximum": 0
+  "planner_wall_clock_time": 0.46
 }
